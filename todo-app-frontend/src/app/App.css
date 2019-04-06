@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Pacifico');
+
+.app-content {
+    margin-top: 64px;   
+  }
+
+.ant-layout {
+    background-color: white;
+}
+
+.header{
+  font-family: 'Permanent Marker', cursive;
+  color: #fd6161 !important;
+  text-align: center;
+}

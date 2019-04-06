@@ -1,0 +1,19 @@
+.dashboard-row {
+    margin-top: 2%;
+    padding-bottom: 30px;
+}
+
+.btn-task-add {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    color: #FFF;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+}
+
+.load-tasks-polls {
+    margin-top: 10px;
+}

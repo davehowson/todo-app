@@ -1,10 +1,7 @@
 package com.davehowson.todo.controller;
 
 import com.davehowson.todo.model.Task;
-import com.davehowson.todo.payload.ApiResponse;
-import com.davehowson.todo.payload.PagedResponse;
-import com.davehowson.todo.payload.TaskRequest;
-import com.davehowson.todo.payload.TaskResponse;
+import com.davehowson.todo.payload.*;
 import com.davehowson.todo.repository.TaskRepository;
 import com.davehowson.todo.repository.UserRepository;
 import com.davehowson.todo.security.CurrentUser;
@@ -58,10 +55,9 @@ public class TaskController {
                 .body(new ApiResponse(true, "Task Created Successfully"));
     }
 
-    @GetMapping("/{pollId}")
-    public TaskResponse getTaskById(@CurrentUser UserPrincipal currentUser,
-                                    @PathVariable Long taskId) {
-        return taskService.getTaskById(taskId, currentUser);
+    @PostMapping("/task/complete")
+    public TaskCompleteResponse completeTask(@RequestBody TaskCompleteRequest taskCompleteRequest){
+        return taskService.completeTask(taskCompleteRequest);
     }
 
 }

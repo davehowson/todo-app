@@ -13,7 +13,7 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
 
     Optional<Task> findById(Long userId);
 
-    Page<Task> findByCreatedBy(Long userId, Pageable pageable);
+    Page<Task> findByCreatedByOrderByDateDesc(Long userId, Pageable pageable);
 
     long countByCreatedBy(Long userId);
 

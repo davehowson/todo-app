@@ -4,10 +4,7 @@ import com.davehowson.todo.exception.BadRequestException;
 import com.davehowson.todo.exception.ResourceNotFoundException;
 import com.davehowson.todo.model.Task;
 import com.davehowson.todo.model.User;
-import com.davehowson.todo.payload.PagedResponse;
-import com.davehowson.todo.payload.TaskRequest;
-import com.davehowson.todo.payload.TaskResponse;
-import com.davehowson.todo.payload.UserSummary;
+import com.davehowson.todo.payload.*;
 import com.davehowson.todo.repository.TaskRepository;
 import com.davehowson.todo.repository.UserRepository;
 import com.davehowson.todo.security.CustomUserDetailsService;
@@ -76,17 +73,14 @@ public class TaskService {
         User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new ResourceNotFoundException("User", "username", username));
 
-        // Retrieve all polls created by the given username
+        // Retrieve all tasks created by the given username
         Pageable pageable = PageRequest.of(page, size, Sort.Direction.DESC, "createdAt");
-        Page<Task> tasks = taskRepository.findByCreatedBy(user.getId(), pageable);
+        Page<Task> tasks = taskRepository.findByCreatedByOrderByDateDesc(user.getId(), pageable);
 
         if (tasks.getNumberOfElements() == 0) {
             return new PagedResponse<>(Collections.emptyList(), tasks.getNumber(),
                     tasks.getSize(), tasks.getTotalElements(), tasks.getTotalPages(), tasks.isLast());
         }
-
-        // Map Polls to PollResponses containing vote counts and poll creator details
-        List<Long> taskIds = tasks.map(Task::getId).getContent();
 
         List<TaskResponse> taskResponses = tasks.map(ModelMapper::mapTasktoTaskResponse).getContent();
 
@@ -94,9 +88,9 @@ public class TaskService {
                 tasks.getSize(), tasks.getTotalElements(), tasks.getTotalPages(), tasks.isLast());
     }
 
-    Map<Long, User> getTaskCreatorMap(List<Task> polls) {
-        // Get Task Creator details of the given list of polls
-        List<Long> creatorIds = polls.stream()
+    Map<Long, User> getTaskCreatorMap(List<Task> tasks) {
+        // Get Task Creator details of the given list of tasks
+        List<Long> creatorIds = tasks.stream()
                 .map(Task::getCreatedBy)
                 .distinct()
                 .collect(Collectors.toList());
@@ -130,6 +124,21 @@ public class TaskService {
                 .orElseThrow(() -> new ResourceNotFoundException("User", "id", task.getCreatedBy()));
 
         return ModelMapper.mapTasktoTaskResponse(task);
+    }
+
+    public TaskCompleteResponse completeTask(TaskCompleteRequest taskCompleteRequest) {
+        Task task = taskRepository.findById(taskCompleteRequest.getTaskId())
+                .orElseThrow(() -> new ResourceNotFoundException("Task", "id", taskCompleteRequest.getTaskId()));
+
+        task.setComplete(taskCompleteRequest.isStatus());
+        taskRepository.save(task);
+
+        TaskCompleteResponse taskCompleteResponse = new TaskCompleteResponse();
+        taskCompleteResponse.setTaskId(taskCompleteRequest.getTaskId());
+        taskCompleteResponse.setStatus(taskCompleteRequest.isStatus());
+        taskCompleteResponse.setMessage("Successfully Completed Task");
+
+        return taskCompleteResponse;
     }
 
 }

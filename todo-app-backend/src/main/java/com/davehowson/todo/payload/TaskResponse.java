@@ -7,6 +7,7 @@ public class TaskResponse {
     private String name;
     private LocalDate date;
     private UserSummary createdBy;
+    private Boolean complete;
 
     public Long getId() {
         return id;
@@ -40,4 +41,11 @@ public class TaskResponse {
         this.createdBy = createdBy;
     }
 
+    public Boolean getComplete() {
+        return complete;
+    }
+
+    public void setComplete(Boolean complete) {
+        this.complete = complete;
+    }
 }

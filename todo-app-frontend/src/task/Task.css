@@ -1,0 +1,28 @@
+.task {
+    padding: 12px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.task-name {
+    font-size: 18px;
+}
+
+.complete-check {
+    margin-top: 10px;
+}
+
+.ant-checkbox-inner {
+    width: 30px;
+    height: 30px;
+}
+
+.ant-checkbox-inner::after {
+    left: 34%;
+    width: 6.714286px;
+    height: 13.142857px;
+}
+
+.today-text {
+    color:#fd6161;
+    font-weight: 800;
+}

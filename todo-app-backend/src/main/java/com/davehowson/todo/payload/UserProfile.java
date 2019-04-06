@@ -11,14 +11,14 @@ public class UserProfile {
     private String username;
     private String name;
     private Instant joinedAt;
-    private List<Task> tasks;
+    private int taskCount;
 
-    public UserProfile(Long id, String username, String name, Instant joinedAt, List<Task> tasks) {
+    public UserProfile(Long id, String username, String name, Instant joinedAt, int taskCount) {
         this.id = id;
         this.username = username;
         this.name = name;
         this.joinedAt = joinedAt;
-        this.tasks = tasks;
+        this.taskCount = taskCount;
     }
 
     public Long getId() {
@@ -53,11 +53,11 @@ public class UserProfile {
         this.joinedAt = joinedAt;
     }
 
-    public List<Task> getTasks() {
-        return tasks;
+    public int getTaskCount() {
+        return taskCount;
     }
 
-    public void setTasks(List<Task> tasks) {
-        this.tasks = tasks;
+    public void setTaskCount(int taskCount) {
+        this.taskCount = taskCount;
     }
 }

@@ -1,0 +1,10 @@
+.user-details {
+    text-align: center;
+    font-size: 19px;
+    margin-top: 20px;
+}
+
+.user-avatar{
+    margin-top: 10px;
+    background-color: #1890ff;
+}

@@ -22,6 +22,9 @@ public class Task extends UserDateAudit {
     @Column
     private LocalDate date;
 
+    @Column
+    private boolean complete = false;
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "userId", nullable = false)
     private User user;
@@ -48,6 +51,14 @@ public class Task extends UserDateAudit {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public boolean isComplete() {
+        return complete;
+    }
+
+    public void setComplete(boolean complete) {
+        this.complete = complete;
     }
 
     public User getUser() {

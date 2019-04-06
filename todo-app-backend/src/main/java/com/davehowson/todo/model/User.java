@@ -67,6 +67,10 @@ public class User extends DateAudit {
         this.password = password;
     }
 
+    public int countTasks(){
+        return tasks.size();
+    }
+
     public Long getId() {
         return id;
     }
