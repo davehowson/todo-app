@@ -1,15 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Dosis:700|Lobster|Montserrat');
+
+.app-container {
+  height: 100%;
+}
 
 .app-content {
-    margin-top: 64px;   
+    margin-top: 64px; 
   }
 
 .ant-layout {
-    background-color: white;
-}
-
-.header{
-  font-family: 'Permanent Marker', cursive;
-  color: #fd6161 !important;
-  text-align: center;
+    background-color: #F8F8F8;
 }

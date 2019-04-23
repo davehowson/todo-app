@@ -1,0 +1,30 @@
+.ant-fullcalendar-header > .ant-radio-group {
+    display: none;
+}
+
+.badge-span > .ant-badge > .ant-badge-status-text {
+    display: none;
+}
+
+.ant-fullcalendar-content {
+    bottom: -1px;
+}
+
+.badge-span > .ant-badge > .ant-badge-status-dot {
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    width: 20px;
+    height: 3px;
+    vertical-align: middle;
+    border-radius: 15%;
+}
+
+.ant-fullcalendar-column-header {
+    padding-bottom: 10px;
+    color: #868686;
+}
+
+.ant-badge-status-error {
+    background-color: #DB0606;
+}

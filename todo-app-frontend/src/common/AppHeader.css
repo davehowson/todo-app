@@ -5,15 +5,16 @@
 .app-title a {
   text-decoration: none;
   line-height: 64px;
-  font-size: 21px;
+  font-size: 30px;
   display: inline-block;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Lobster', cursive;
   margin-left: 20px;
+  color: #000000;
 }
 
-.app-title-icon {
-  font-size: 25px;
-  color: #52c41a;
+#xtitle {
+  font-family: 'Dosis', sans-serif;
+  color: #DB0606;
 }
 
 .app-title a:hover {
@@ -31,7 +32,6 @@
 .app-header {
   position: fixed;
   width: 100%;
-  box-shadow: 0 2px 8px #f0f1f2;
   z-index: 10;
   padding: 0;
   background-color: white;

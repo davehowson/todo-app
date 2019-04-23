@@ -1,7 +1,75 @@
-.dashboard-row {
-    margin-top: 2%;
-    padding-bottom: 30px;
+.dashboard {
+    height: 100%;
 }
+
+.dashboard-row {
+    height: 100%;
+}
+
+.task-col {
+    background-color: #141414;
+    color: #FFF;
+    height: 100%;
+}
+
+.task-nav {
+    width: 60%;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.task-nav-icon {
+    font-size: 25px;
+}
+
+#task-nav-left {
+    float: left;
+    width: 100px;
+    padding-top: 10px;
+}
+
+#task-nav-right {
+    float: right;
+    text-align: right;
+    width: 100px;
+    padding-top: 10px;
+}
+
+#task-nav-center {
+    margin: 0 auto;
+    width: 155px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.task-list {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px 0;
+    height: 80%;
+}
+
+.no-tasks-found {
+    text-align: center;
+    font-size: 20px;
+    padding-top: 15%;
+    color: #a2a2a2;
+}
+
+
+#task-nav-date {
+    font-size: 25px;
+}
+
+#calendar-title {
+    margin: 0 auto;
+    padding: 30px 0;
+    width: 115px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 25px;
+}
+
 
 .btn-task-add {
     position: fixed;

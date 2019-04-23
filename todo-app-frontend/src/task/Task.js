@@ -48,31 +48,16 @@ class Task extends Component {
     }
 
     render() {
-        if (this.props.today) {
-            return (
-                <Row className="task">
-                    <Col span={20} className="task-content">
-                        <div className="task-name">{this.props.task.name}</div>
-                        <div className="task-date">{this.props.task.date} - <span className="today-text">Today</span></div>
-                    </Col>
-                    <Col span={4}>
-                        <Checkbox className="complete-check" onChange={this.handleChange.bind(this, this.props.task.id)} checked={this.state.checked}></Checkbox>
-                    </Col>
-                </Row>
-            )
-        } else {
-            return (
-                <Row className="task">
-                    <Col span={20} className="task-content">
-                        <div className="task-name">{this.props.task.name}</div>
-                        <div className="task-date">{this.props.task.date}</div>
-                    </Col>
-                    <Col span={4}>
-                        <Checkbox className="complete-check" onChange={this.handleChange.bind(this, this.props.task.id)} checked={this.state.checked}></Checkbox>
-                    </Col>
-                </Row>
-            )
-        }
+        return (
+            <Row className="task">
+                <Col span={4}>
+                    <Checkbox className="complete-check" onChange={this.handleChange.bind(this, this.props.task.id)} checked={this.state.checked}></Checkbox>
+                </Col>
+                <Col span={20} className="task-content">
+                    <div className="task-name">{this.props.task.name}</div>
+                </Col>
+            </Row>
+        )
     }
 }
 

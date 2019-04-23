@@ -1,7 +1,7 @@
 export const API_BASE_URL = 'http://localhost:5000/api';
 export const ACCESS_TOKEN = 'accessToken';
 
-export const TASK_LIST_SIZE = 5;
+export const TASK_LIST_SIZE = 20;
 
 export const NAME_MIN_LENGTH = 4;
 export const NAME_MAX_LENGTH = 40;

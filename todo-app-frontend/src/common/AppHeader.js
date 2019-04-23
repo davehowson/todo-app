@@ -49,7 +49,7 @@ class AppHeader extends Component {
             <Header className="app-header">
             <div className="container">
               <div className="app-title" >
-                <Link to="/"><Icon type="check" className="app-title-icon"/> TO DO APP</Link>
+                <Link to="/"><span id="xtitle">x</span>-Todo</Link>
               </div>
               <Menu
                 className="app-menu"

@@ -51,12 +51,12 @@ export function getUserProfile() {
     });
 }
 
-export function getTasks(page, size){
+export function getTasks(page, size, date){
     page = page || 0;
     size = size || TASK_LIST_SIZE;
 
     return request({
-        url: API_BASE_URL + "/tasks?page=" + page + "&size=" + size,
+        url: API_BASE_URL + "/tasks?date=" + date + "&page=" + page + "&size=" + size,
         method: 'GET'
     });
 }
